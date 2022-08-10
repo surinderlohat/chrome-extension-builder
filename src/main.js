@@ -51,7 +51,7 @@ program
       fs.copySync(path.resolve(rootPath, template), path.resolve(destinationPath));
       fs.copySync(path.resolve(rootPath, 'images'), path.resolve(destinationPath, 'images'));
 
-      console.log('Update manifest file', destinationPath);
+      Utilities.debugLogs('Update manifest file', destinationPath);
       // read template file and update the information
       const file = await fs.readJSON(path.resolve(destinationPath, 'manifest.json'));
       const newFile = Object.assign(file, {
